@@ -11,9 +11,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import static org.junit.Assert.assertEquals;
-
-import dhsFlashSelenium.Pages.CreateAward;
 import dhsFlashSelenium.Pages.Login;
 
 import java.net.MalformedURLException;
