@@ -9,7 +9,7 @@ public class SubmitMeetingSurveyIT extends AbstractTest {
 	MeetingSurvey meetingSurvey;
 
 	@Test (priority = 0)
-	public void successfulLogin() {
+	public void startSurvey() {
 		meetingSurvey = new MeetingSurvey(driver);
 		waitDriver.until(ExpectedConditions.visibilityOf(meetingSurvey.submitButton));
 		meetingSurvey.submitMeetingSurvey();
