@@ -8,6 +8,9 @@ import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 public class Login {
 	WebDriver driver;
 
+	@FindBy(id="loginbox")
+	public WebElement loginBox;
+	
 	@FindBy(id="user_id")
 	WebElement usernameTextBox;
 

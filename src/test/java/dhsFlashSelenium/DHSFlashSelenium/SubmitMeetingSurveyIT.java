@@ -1,5 +1,8 @@
 package dhsFlashSelenium.DHSFlashSelenium;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -10,17 +13,13 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import dhsFlashSelenium.Pages.Login;
 
-import java.net.MalformedURLException;
-import java.net.URL;
+import dhsFlashSelenium.Pages.MeetingSurvey;
 
-public class LoginIT {
+public class SubmitMeetingSurveyIT {
 	WebDriver driver;
 	WebDriverWait waitDriver;
-	Login loginPage;
-	String username = "fakeusername";
-	String password = "fakepassword";
+	MeetingSurvey meetingSurvey;
 
 	@Parameters({"browser", "environment"})
 	@BeforeClass
@@ -34,13 +33,13 @@ public class LoginIT {
 		waitDriver = new WebDriverWait (driver, 15);
 		driver.get(environment);
 		
-		loginPage = new Login(driver);
+		meetingSurvey = new MeetingSurvey(driver);
 	}
 
 	@Test (priority = 0)
 	public void successfulLogin() {
-		waitDriver.until(ExpectedConditions.visibilityOf(loginPage.loginBox));
-		loginPage.login(this.username, this.password); 
+		waitDriver.until(ExpectedConditions.visibilityOf(meetingSurvey.submitButton));
+		meetingSurvey.submitMeetingSurvey();
 	}
 
 	@AfterClass
@@ -48,4 +47,3 @@ public class LoginIT {
 		driver.quit();
 	}
 }
-
