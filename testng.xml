@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="DHS-Kudos" parallel="false" preserve-order="true">
-    <parameter name="environment" value="http://devint-elb-311533204.us-east-1.elb.amazonaws.com/DHSFlash/#/home" />
+    <parameter name="environment" value="http://devint-elb-311533204.us-east-1.elb.amazonaws.com/DHSFlash/DHSFlash/kudoseval" />
     <parameter name="browser" value="chrome" />
-    <test name="Basic Check">
+    <test name="SubmitMeetingEval">
         <classes>
         	<class name="dhsFlashSelenium.DHSFlashSelenium.SubmitMeetingSurvey" />
         </classes>
