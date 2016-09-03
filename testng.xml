@@ -3,7 +3,13 @@
 <suite name="DHS-Kudos" parallel="false" preserve-order="true">
     <parameter name="environment" value="http://devint-elb-311533204.us-east-1.elb.amazonaws.com/DHSFlash/DHSFlash/kudoseval" />
     <parameter name="browser" value="chrome" />
-    <test name="SubmitMeetingEval">
+    <test name="SubmitMeetingEvalChrome">
+        <classes>
+        	<class name="dhsFlashSelenium.DHSFlashSelenium.SubmitMeetingSurveyIT" />
+        </classes>
+    </test>
+	<parameter name="browser" value="firefox" />
+    <test name="SubmitMeetingEvalFirefox">
         <classes>
         	<class name="dhsFlashSelenium.DHSFlashSelenium.SubmitMeetingSurveyIT" />
         </classes>

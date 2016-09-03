@@ -19,7 +19,12 @@ public abstract class AbstractTest {
 	@Parameters({"browser", "environment"})
 	@BeforeClass
 	public void openBrowser(String browser, String environment) throws MalformedURLException {
-		DesiredCapabilities capability = DesiredCapabilities.chrome();
+		DesiredCapabilities capability = new DesiredCapabilities();
+		if (browser.equals("chrome")) {
+			capability = DesiredCapabilities.chrome();
+		} else if (browser.equals("firefox")) {
+			capability = DesiredCapabilities.firefox();
+		}
 		capability.setBrowserName(browser);
 		capability.setPlatform(Platform.LINUX);
 
@@ -28,7 +33,7 @@ public abstract class AbstractTest {
 		waitDriver = new WebDriverWait (driver, 15);
 		driver.get(environment);
 	}
-	
+
 	@AfterClass
 	public void takeDown() {
 		driver.quit();
