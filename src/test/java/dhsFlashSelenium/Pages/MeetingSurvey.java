@@ -9,7 +9,7 @@ import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 public class MeetingSurvey {
 	WebDriver driver;
 	
-	@FindBy(css="button[title='kudosEvalSubmit']")
+	@FindBy(css="button[title='Log In']")
 	public WebElement submitButton;
 
 	public MeetingSurvey(WebDriver driver) {
