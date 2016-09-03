@@ -5,7 +5,7 @@
     <parameter name="browser" value="chrome" />
     <test name="SubmitMeetingEval">
         <classes>
-        	<class name="dhsFlashSelenium.DHSFlashSelenium.SubmitMeetingSurvey" />
+        	<class name="dhsFlashSelenium.DHSFlashSelenium.SubmitMeetingSurveyIT" />
         </classes>
     </test>
 </suite>
