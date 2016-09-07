@@ -12,7 +12,7 @@ public class ViewEmployeeList extends AbstractTest {
 	GivePoint pointPage;
 	String listTitle = "Latest Kudos";
 
-	@Test (priority = 0)
+	@Test (priority = 10)
 	public void viewEmployeeList() {
 		pointPage = new GivePoint(driver);
 		waitDriver.until(ExpectedConditions.visibilityOf(pointPage.getKudosList()));
@@ -22,7 +22,7 @@ public class ViewEmployeeList extends AbstractTest {
 		assertTrue(pointPage.getUsers().size() > 0);
 	}
 	
-	@Test (priority = 1)
+	@Test (priority = 11)
 	public void viewEmployeePoints() {
 		pointPage.getUsers().get(0);
 	}
