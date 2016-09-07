@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="DHS-Kudos" parallel="false" preserve-order="true">
-    <parameter name="environment" value="http://devint-elb-311533204.us-east-1.elb.amazonaws.com/DHSFlash/#/kudoseval" />
+    <parameter name="environment" value="http://devint-elb-311533204.us-east-1.elb.amazonaws.com/DHSFlash/#/home" />
     <parameter name="browser" value="chrome" />
     <test name="SubmitMeetingEvalChrome">
         <classes>
-        	<class name="dhsFlashSelenium.DHSFlashSelenium.SubmitMeetingSurveyIT" />
+        	<class name="dhsFlashSelenium.DHSFlashSelenium.GivePointTest" />
         </classes>
     </test>
 	<parameter name="browser" value="firefox" />
     <test name="SubmitMeetingEvalFirefox">
         <classes>
-        	<class name="dhsFlashSelenium.DHSFlashSelenium.SubmitMeetingSurveyIT" />
+        	<class name="dhsFlashSelenium.DHSFlashSelenium.GivePointTest" />
         </classes>
     </test>
 </suite>
