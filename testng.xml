@@ -3,9 +3,15 @@
 <suite name="DHS-Kudos" parallel="false" preserve-order="true">
     <parameter name="environment" value="http://devint-elb-311533204.us-east-1.elb.amazonaws.com/DHSFlash/#/home" />
     <parameter name="browser" value="chrome" />
-    <test name="Basic Check">
+    <test name="SubmitMeetingEvalChrome">
         <classes>
-        	<class name="dhsFlashSelenium.DHSFlashSelenium.LoginIT" />
+        	<class name="dhsFlashSelenium.DHSFlashSelenium.GivePointTest" />
+        </classes>
+    </test>
+	<parameter name="browser" value="firefox" />
+    <test name="SubmitMeetingEvalFirefox">
+        <classes>
+        	<class name="dhsFlashSelenium.DHSFlashSelenium.GivePointTest" />
         </classes>
     </test>
 </suite>
