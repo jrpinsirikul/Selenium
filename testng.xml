@@ -6,12 +6,14 @@
     <test name="SubmitMeetingEvalChrome">
         <classes>
         	<class name="dhsFlashSelenium.DHSFlashSelenium.GivePointTest" />
+        	<class name="dhsFlashSelenium.DHSFlashSelenium.ViewEmployeeList" />
         </classes>
     </test>
 	<parameter name="browser" value="firefox" />
     <test name="SubmitMeetingEvalFirefox">
         <classes>
         	<class name="dhsFlashSelenium.DHSFlashSelenium.GivePointTest" />
+        	<class name="dhsFlashSelenium.DHSFlashSelenium.ViewEmployeeList" />
         </classes>
     </test>
 </suite>
