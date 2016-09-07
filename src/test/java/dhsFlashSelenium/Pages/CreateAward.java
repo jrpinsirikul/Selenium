@@ -1,5 +1,4 @@
 package dhsFlashSelenium.Pages;
-import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,7 +10,7 @@ public class CreateAward {
 	WebDriver driver;
 
 	@FindBy(id="award-dropdown-id")
-	WebElement awardDropdown;
+	WebElement awardSelection;
 
 	@FindBy(id="employee-dropdown-id")
 	WebElement employeeDropdown;
@@ -26,25 +25,15 @@ public class CreateAward {
 	}
 
 	public boolean selectEmployee(String employeeName) {
-		Select select = new Select(employeeDropdown);  
-		List<WebElement> options = select.getOptions();  
-		for(WebElement we:options) {
-			if(we.getText().equals(employeeName)) {
-				return true;
-			}
-		}
-		return false;
+		Select dropDown = new Select(employeeDropdown);  
+		dropDown.selectByVisibleText(employeeName);
+		return true;
 	} 
 
 	public boolean selectAward(String awardName) {
-		Select select = new Select(awardDropdown);  
-		List<WebElement> options = select.getOptions();  
-		for(WebElement we:options) {
-			if(we.getText().equals(awardName)) {
-				return true;
-			}
-		}
-		return false;
+		Select dropDown = new Select(awardSelection);  
+		dropDown.selectByVisibleText(awardName);
+		return true;
 	} 
 	
 	public boolean submitAward() {
