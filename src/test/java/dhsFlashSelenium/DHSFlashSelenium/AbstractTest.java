@@ -28,7 +28,7 @@ public abstract class AbstractTest {
 		capability.setBrowserName(browser);
 		capability.setPlatform(Platform.LINUX);
 
-		driver = new RemoteWebDriver(new URL("http://52.207.208.41:4444/wd/hub"),capability);
+		driver = new RemoteWebDriver(new URL("http://52.207.208.41/wd/hub"),capability);
 
 		waitDriver = new WebDriverWait (driver, 15);
 		driver.get(environment);
