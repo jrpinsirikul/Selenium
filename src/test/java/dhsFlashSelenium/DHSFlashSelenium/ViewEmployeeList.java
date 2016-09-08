@@ -1,6 +1,5 @@
 package dhsFlashSelenium.DHSFlashSelenium;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -10,20 +9,19 @@ import dhsFlashSelenium.Pages.GivePoint;
 
 public class ViewEmployeeList extends AbstractTest {
 	GivePoint pointPage;
-	String listTitle = "Latest Kudos";
 
 	@Test (priority = 10)
 	public void viewEmployeeList() {
 		pointPage = new GivePoint(driver);
 		waitDriver.until(ExpectedConditions.visibilityOf(pointPage.getKudosList()));
 		assertTrue(pointPage.getKudosList().isDisplayed());
-		assertTrue(pointPage.getList().isDisplayed());
-		assertEquals(listTitle, pointPage.getListTitleText());
-		assertTrue(pointPage.getUsers().size() > 0);
+		assertTrue(pointPage.getListHeader().isDisplayed());
 	}
-	
+
 	@Test (priority = 11)
 	public void viewEmployeePoints() {
-		pointPage.getUsers().get(0);
+		if(pointPage.getUsers().size() != 0) {
+			assertTrue(pointPage.usersHaveKudos());
+		}
 	}
 }

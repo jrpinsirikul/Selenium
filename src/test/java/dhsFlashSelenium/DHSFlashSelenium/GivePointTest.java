@@ -7,7 +7,7 @@ import dhsFlashSelenium.Pages.GivePoint;
 
 public class GivePointTest extends AbstractTest {
 	GivePoint givePoint;
-	String employeeName = "Julia Brundage";
+	String employeeName = "John Doe";
 
 	@Test (priority = 0)
 	public void submitPointForm() {
