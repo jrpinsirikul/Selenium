@@ -30,6 +30,7 @@ public class LoginIT extends AbstractTest {
 		waitDriver.until(ExpectedConditions.visibilityOf(loginPage.getLoginBox()));
 		loginPage.login(this.username, this.password);
 		GivePoint homePage = new GivePoint(driver);
+		waitDriver.until(ExpectedConditions.visibilityOf(homePage.getPointForm()));
 		assertEquals(homePageTitle, homePage.getPageTitle());
 	}
 }
