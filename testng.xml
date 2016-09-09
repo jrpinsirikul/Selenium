@@ -10,11 +10,4 @@
 			<class name="dhsFlashSelenium.DHSFlashSelenium.GivePointTest" />
 		</classes>
 	</test>
-	<parameter name="browser" value="firefox" />
-	<test name="SubmitMeetingEvalFirefox">
-		<classes>
-			<class name="dhsFlashSelenium.DHSFlashSelenium.LoginIT" />
-			<class name="dhsFlashSelenium.DHSFlashSelenium.GivePointTest" />
-		</classes>
-	</test>
 </suite>
