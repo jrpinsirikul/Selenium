@@ -1,4 +1,5 @@
 package dhsFlashSelenium.Pages;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,34 +10,82 @@ public class Login {
 	WebDriver driver;
 
 	@FindBy(id="loginbox")
-	public WebElement loginBox;
+	WebElement loginBox;
 	
 	@FindBy(id="user_id")
-	WebElement usernameTextBox;
-
+	WebElement userID;
+	
 	@FindBy(id="user_password")
-	WebElement passwordTextBox;
+	WebElement userPassword;
 
 	@FindBy(css="button[title='Log In']")
 	WebElement loginButton;
 
+	/**
+	 * Initializes give point page element
+	 * @param driver the driver to interact with browser
+	 */
 	public Login(WebDriver driver) {
 		this.driver = driver;
 		AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(driver, 15);
 		PageFactory.initElements(factory, this);
 	}
-
-	public void inputUsername(String username) {
-		usernameTextBox.sendKeys(username);
-	} 
-
-	public void inputPassword(String password) {
-		passwordTextBox.sendKeys(password);
-	} 
 	
+	/**
+	 * Inputs username
+	 * @param the username of the login user
+	 */
+	public void inputUsername(String username) {
+		userID.sendKeys(username);
+	}
+	
+	/**
+	 * Inputs password
+	 * @param the password of the login user
+	 */
+	public void inputPassword(String password) {
+		userPassword.sendKeys(password);
+	}
+	
+	/**
+	 * Submits the username and password
+	 * @param the username and password
+	 */
 	public void login(String username, String password) {
 		inputUsername(username);
 		inputPassword(password);
 		loginButton.click();
+	}
+
+	/**
+	 * Get login box element
+	 * @return the login box element
+	 */
+	public WebElement getLoginBox() {
+		return loginBox;
+	}
+	
+	/**
+	 * Get username box element
+	 * @return the username box element
+	 */
+	public WebElement getUsernameBox() {
+		return loginBox;
+	}
+	
+	/**
+	 * Get password box element
+	 * @return the password box element
+	 */
+	public WebElement getPasswordBox() {
+		return loginBox;
+	}
+
+	/**
+	 * Gets the give point page title
+	 * @return the title of the page
+	 */
+	public String getPageTitle() {
+		return driver.getTitle();
 	}
 }
