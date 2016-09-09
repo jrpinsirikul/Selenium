@@ -10,6 +10,7 @@ import static org.junit.Assert.assertEquals;
 
 public class LoginIT extends AbstractTest {
 	Login loginPage;
+	GivePoint homePage;
 	String username = "johndoe";
 	String password = "letmein";
 	String wrongUsername = "wrongUsername";
@@ -26,6 +27,7 @@ public class LoginIT extends AbstractTest {
 	
 	@Test (priority = 1)
 	public void successfulLogin() {
+		driver.get("http://staging.linktecflash.com/DHSFlash/#/home");
 		loginPage = new Login(driver);
 		waitDriver.until(ExpectedConditions.visibilityOf(loginPage.getLoginBox()));
 		loginPage.login(this.username, this.password);
